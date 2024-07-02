@@ -4,9 +4,9 @@ const compression = require('compression');
 const helmet = require('helmet');
 const path = require('path');
 const Joi = require('joi');
-const dbConfig=require('./db');
-const { logger } = require('./middlewares/logger');
 require('dotenv').config();
+const dbConfig=require('./config/db');
+const { logger } = require('./middlewares/logger');
 const { notFound, errorHandling} = require('./middlewares/errorHandler');
 
 
@@ -27,7 +27,4 @@ app.use(notFound)
 app.use(errorHandling)
 
 app.listen(port, () => console.log(`server is listening on port ${port} ! on ${process.env.NODE_ENV} mode`));
-
-
-
 

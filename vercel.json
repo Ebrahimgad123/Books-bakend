@@ -1,0 +1,23 @@
+{
+    "build": {
+      "env": {
+        "MONGO_URI": "mongodb+srv://ibrahimabokhalil05:123@cluster0.ftc4r69.mongodb.net/books?retryWrites=true&w=majority&appName=Cluster0",
+        "PORT": "6000",
+        "NODE_ENV": "development",
+        "JWT_SECRET": "e1RSzIiw9U"
+      }
+    },
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/server.js"
+      }
+    ]
+  }
+  
